@@ -13,10 +13,15 @@ angular.module('redditApp').config([
     $urlRouterProvider.when('', '/');
 
     $stateProvider
-      .state('home', {
+      .state('posts', {
         url: '/',
-        templateUrl: 'app/components/home/home.html',
-        controller: 'homeCtrl'
+        templateUrl: 'app/components/posts/posts.html',
+        controller: 'postsCtrl'
+      })
+      .state('post', {
+        url: '/post/:url',
+        templateUrl: 'app/components/post/post.html',
+        controller: 'postCtrl'
       });
   }
 ]);

@@ -12,22 +12,14 @@ angular.module('redditApp').run([
   }
 ]);
 
-// ------------ PhoneGap Init ------------ //
-var PhoneGapInit = function() {
-  this.boot = function() {
-    angular.bootstrap(document, ['redditApp']);
-  };
-
-  if (window.phonegap !== undefined) {
+// ------------ Angular Bootstrap ------------ //
+angular.element(document).ready(function() {
+  if (window.phonegap) {
     document.addEventListener('deviceready', function() {
-      this.boot();
+      angular.bootstrap(document, ['redditApp']);
     });
   } else {
     console.log('PhoneGap not found, booting Angular manually');
-    this.boot();
+    angular.bootstrap(document, ['redditApp']);
   }
-};
-
-angular.element(document).ready(function() {
-  new PhoneGapInit();
 });

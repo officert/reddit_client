@@ -1,18 +1,20 @@
-angular.module('redditApp').controller('homeCtrl', [
+angular.module('redditApp').controller('postsCtrl', [
   '$scope',
   'redditService',
   'geolocationService',
   function($scope, redditService, geolocationService) {
     'use strict';
 
-    $scope.searchTerm = 'funny';
-    $scope.search = function() {
-      redditService.listSubreddits($scope.searchTerm).then(function success(response) {
+    $scope.form = {
+      searchTerm: 'funny'
+    };
+    $scope.searchSubreddits = function(form) {
+      redditService.listSubreddits($scope.form.searchTerm).then(function success(response) {
         $scope.posts = response.data.data.children;
       });
     };
 
-    $scope.search();
+    $scope.searchSubreddits();
 
     // geolocationService.getCurrentLocation().then(function success(position) {
     //   alert('Latitude: ' + position.coords.latitude + '\n' +
