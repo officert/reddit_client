@@ -1,25 +1,22 @@
 angular.module('redditApp', [
-  'ngAnimate',
-  'ui.router',
-  'ui.bootstrap'
+  'ionic'
 ]);
-
 
 angular.module('redditApp').run([
-  '$rootScope',
-  function($rootScope) {
+  '$ionicPlatform',
+  function($ionicPlatform) {
     'use strict';
+
+    $ionicPlatform.ready(function() {
+      // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+      // for form inputs)
+      if (window.cordova && window.cordova.plugins.Keyboard) {
+        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      }
+      if (window.StatusBar) {
+        // org.apache.cordova.statusbar required
+        StatusBar.styleDefault();
+      }
+    });
   }
 ]);
-
-// ------------ Angular Bootstrap ------------ //
-angular.element(document).ready(function() {
-  if (window.phonegap) {
-    document.addEventListener('deviceready', function() {
-      angular.bootstrap(document, ['redditApp']);
-    });
-  } else {
-    console.log('PhoneGap not found, booting Angular manually');
-    angular.bootstrap(document, ['redditApp']);
-  }
-});

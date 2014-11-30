@@ -1,31 +1,17 @@
 {
-  "name": "RedditApp",
-  "version": "0.0.1",
-  "description": "Reddit App",
-  "url": "https://www.tablelist.com",
-  "author": "Tim Officer",
-  "engines": {
-    "node": "0.10.x"
-  },
+  "name": "reddit_app",
+  "version": "1.0.0",
+  "description": "reddit_app: An Ionic project",
   "dependencies": {
-    "express": "4.9.8",
-    "underscore": "1.7.0"
+    "gulp": "^3.5.6",
+    "gulp-sass": "^0.7.1",
+    "gulp-concat": "^2.2.0",
+    "gulp-minify-css": "^0.3.0",
+    "gulp-rename": "^1.2.0"
   },
   "devDependencies": {
-    "bower": "1.3.12",
-    "gulp": "3.8.10",
-    "gulp-clean": "0.3.1",
-    "gulp-concat": "2.4.1",
-    "gulp-exec": "2.1.1",
-    "gulp-html-replace": "1.3.0",
-    "gulp-if": "1.2.4",
-    "gulp-jshint": "1.8.4",
-    "gulp-less": "1.3.6",
-    "gulp-replace": "0.5.0",
-    "gulp-shell": "^0.2.10",
-    "gulp-uglify": "1.0.1",
-    "gulp-uglifyjs": "0.4.2",
-    "gulp-watch": "1.2.0",
-    "jshint-stylish": "0.4.0"
+    "bower": "^1.3.3",
+    "gulp-util": "^2.2.14",
+    "shelljs": "^0.3.0"
   }
 }
