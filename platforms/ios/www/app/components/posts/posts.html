@@ -2,7 +2,7 @@
   <ion-content>
     <ion-list>
       <ion-item ng-repeat="post in posts" type="item-text-wrap" ui-sref="post({ url : post.data.url })">
-        <img ng-src="{{ post.data.thumbnail }}">
+        <img ng-src="{{ post.data.thumbnail ? post.data.thumbnail : 'https://cdn3.iconfinder.com/data/icons/simplius-pack/512/photo-512.png' }}" height="50px" style="float:left;margin-right:15px;">
         <h2>{{ post.data.title }}</h2>
         <ion-option-button class="button-positive" ng-click="share(item)">
           Share

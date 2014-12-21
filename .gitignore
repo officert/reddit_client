@@ -4,5 +4,6 @@ node_modules
 *.log
 *.codekit
 *.sublime-*
+platforms
 build
-src/bower_components
+www/bower_components
